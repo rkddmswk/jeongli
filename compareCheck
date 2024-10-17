@@ -1,0 +1,6 @@
+compareCheck
+=================
+ag-grid 컴포넌트 > compareCheck
+if(module.includes('revisionCompare') || compareCheck) {
+  iff
+}

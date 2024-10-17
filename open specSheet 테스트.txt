@@ -1,0 +1,7 @@
+datasheet > list 설정하기
+
+datasheet > setting > formatList > 수정하려는 ds format 선택 > ds format id 확인
+index > setting > inst type(mms) > mms 5 code 에서 확인한  ds format id 토대로 inst type2 확인
+index > index browser > 확인한 inst type2 를 추가하려는 row에 inst type2 컬럼에다 입력 > save
+datasheet > analyzer > 수정한 ds format 선택 > tag update > save
+  

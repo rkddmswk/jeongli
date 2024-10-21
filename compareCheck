@@ -2,5 +2,50 @@ compareCheck
 =================
 ag-grid 컴포넌트 > compareCheck
 if(module.includes('revisionCompare') || compareCheck) {
-  iff
+  if(historyModal) {
+    agGridApi.api.setColumnDefs(gridDefaultProps.field.concat(gridConfig.field));
+  } else {
+    let temp: any = [];
+     if(module.includes('interfaceOut')){
+      temp = [
+        {
+          field: 'compare_result',
+          headerName: 'COMPARE RESULT',
+          editable: false,
+          pinned: 'left',
+          valueGetter: (params:any) => {
+           if(params.data.diff_col == null & params.data.diff_col == undefiend) {
+              if(params.data.add_row) {
+                return 'ADD';
+              } 
+              if(params.data.del_row) {
+                return 'DEL';
+              }
+           } else {
+                return 'CHG';
+           }
+          },
+        },
+          ...gridDefaultProps.field,  
+      ];
+     }  else {
+        temp = [
+          {
+            field: 'compare_result',
+            headerName: 'COMPARE RESULT',
+            editable: false,
+            pinned: 'left',
+          },
+            ...gridDefaultProps.field,
+        ];
+     }
+      gridApi.api.setColumnDefs(temp.concat(gridConfig.field));
+  } 
+} else {
+    agGridApi.api.setColumnDefs(gridDefaultProps.field.concat(gridConfig.field));
 }
+
+compareCheck  설정값
+=========================
+const [compareCheck, setCompareCheck] = useState<boolean>(false);
+

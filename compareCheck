@@ -46,6 +46,12 @@ if(module.includes('revisionCompare') || compareCheck) {
 }
 
 compareCheck  설정값
+interfaceIn > processData > analyzer > index.tsx
 =========================
 const [compareCheck, setCompareCheck] = useState<boolean>(false);
 
+compareCheck 기본값 false > tagVerification 할때 compareCheck(false) 적용 > tagverification 들어갈때 원래 초기값 적용
+const handleTagVerficationClick = useCallback(() => {
+  setCompareCheck(false)
+  api.post(`~~~~~~~`, ).then(() => {})~~~~~
+},[griApi, historyState])
